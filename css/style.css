@@ -1,1 +1,62 @@
 
+/* Box sizing so padding/border doesn't break width */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2em; /* 75% larger than base text */
+}
+
+/* section base styles */
+.section {
+  position: relative;
+  border: 1px solid black;
+  background-color: #e0e0e0; /* light gray background for section */
+  float: left;
+  width: 31%;
+  margin: 1%;
+  padding: 50px 10px 10px 10px; /* top padding to avoid overlap with section-title */
+  min-height: 200px;
+}
+
+/* section title styles */
+.section-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid black;
+  padding: 5px 15px;
+  font-size: 1.25em; /* 25% larger than normal text */
+  font-weight: bold;
+}
+
+/* unique title colors */
+.chicken .section-title {
+  background-color: #f8b8b8; /* light red */
+}
+
+.beef .section-title {
+  background-color: #e06666; /* darker red */
+  color: white;
+}
+
+.sushi .section-title {
+  background-color: #f9e79f; /* light yellow */
+}
+
+/* remove floats if screen shrinks, handled in media queries later */
+@media (max-width: 991px) {
+  .section {
+    float: none;
+    width: 100%;
+  }
+}
